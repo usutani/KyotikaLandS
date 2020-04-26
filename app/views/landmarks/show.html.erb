@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @landmark.name %>
+</p>
+
+<p>
+  <strong>Hiragana:</strong>
+  <%= @landmark.hiragana %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @landmark.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @landmark.longitude %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @landmark.url %>
+</p>
+
+<p>
+  <strong>Question:</strong>
+  <%= @landmark.question %>
+</p>
+
+<p>
+  <strong>Answer1:</strong>
+  <%= @landmark.answer1 %>
+</p>
+
+<p>
+  <strong>Answer2:</strong>
+  <%= @landmark.answer2 %>
+</p>
+
+<p>
+  <strong>Answer3:</strong>
+  <%= @landmark.answer3 %>
+</p>
+
+<p>
+  <strong>Correct:</strong>
+  <%= @landmark.correct %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @landmark.author %>
+</p>
+
+<%= link_to 'Edit', edit_landmark_path(@landmark) %> |
+<%= link_to 'Back', landmarks_path %>

@@ -1,0 +1,72 @@
+<%= form_with(model: landmark, local: true) do |form| %>
+  <% if landmark.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(landmark.errors.count, "error") %> prohibited this landmark from being saved:</h2>
+
+      <ul>
+        <% landmark.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hiragana %>
+    <%= form.text_field :hiragana %>
+  </div>
+
+  <div class="field">
+    <%= form.label :latitude %>
+    <%= form.text_field :latitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :longitude %>
+    <%= form.text_field :longitude %>
+  </div>
+
+  <div class="field">
+    <%= form.label :url %>
+    <%= form.text_field :url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :question %>
+    <%= form.text_field :question %>
+  </div>
+
+  <div class="field">
+    <%= form.label :answer1 %>
+    <%= form.text_field :answer1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :answer2 %>
+    <%= form.text_field :answer2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :answer3 %>
+    <%= form.text_field :answer3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :correct %>
+    <%= form.number_field :correct %>
+  </div>
+
+  <div class="field">
+    <%= form.label :author %>
+    <%= form.text_field :author %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
