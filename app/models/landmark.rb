@@ -4,4 +4,7 @@ class Landmark < ApplicationRecord
                                  message: 'は、ひらがなを入力してください。' }
   validates :correct, numericality: { greater_than_or_equal_to: 1,
                                       less_than_or_equal_to: 3 }
+
+  has_many :taggings, dependent: :destroy
+  has_many :tags, through: :taggings
 end
