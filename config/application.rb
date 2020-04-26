@@ -17,3 +17,11 @@ module KyotikaLandS
     # the framework and any gems in your application.
   end
 end
+
+module Rails
+  class Application
+    def eager_load!
+      Zeitwerk::Loader.eager_load_all
+    end
+  end
+end
