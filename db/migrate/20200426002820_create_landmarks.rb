@@ -1,8 +1,8 @@
 class CreateLandmarks < ActiveRecord::Migration[6.0]
   def change
     create_table :landmarks do |t|
-      t.string :name
-      t.string :hiragana
+      t.string :name, null: false
+      t.string :hiragana, null: false
       t.float :latitude
       t.float :longitude
       t.string :url
