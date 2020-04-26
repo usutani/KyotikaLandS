@@ -7,4 +7,15 @@ class Landmark < ApplicationRecord
 
   has_many :taggings, dependent: :destroy
   has_many :tags, through: :taggings
+
+  def tag_names
+    tags.map(&:name).join(',')
+  end
+
+  def add_tags(tag_names)
+    tag_names.split(',').each do |name|
+      tag = Tag.find_or_create_by(name: name)
+      tags << tag
+    end
+  end
 end

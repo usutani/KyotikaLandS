@@ -11,6 +11,13 @@
     </div>
   <% end %>
 
+  <% whitelist = Tag.select(:name).order(:name).map(&:name).join(',') %>
+  <%= tag.div class: 'field', data: { controller: 'tagify', whitelist: whitelist } do %>
+    <%= form.label :tag_names, 'タグ(5つまで)' %>
+    <%= text_field_tag :tagify, '', data: { target: 'tagify.tagify' } %>
+    <%= form.hidden_field :tag_names, data: { target: 'tagify.tagNames' } %>
+  <% end %>
+
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
