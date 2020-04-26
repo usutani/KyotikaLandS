@@ -18,3 +18,35 @@ landmark = Landmark.create!(
   correct: 1,
   author: '臼谷泰弘'
 )
+
+landmark.tags.create!(
+  [
+    { name: '駅' },
+    { name: '公共施設' },
+    { name: '観光' }
+  ]
+)
+
+Tag.create!(
+  [
+    { name: 'キャラクター' },
+    { name: 'グルメ' },
+    { name: '出町柳' },
+    { name: '動物' },
+    { name: '博物館' },
+    { name: '商業施設' },
+    { name: '国宝' },
+    { name: '平家' },
+    { name: '橋' },
+    { name: '流鏑馬' },
+    { name: '漫画' },
+    { name: '神社' },
+    { name: '祭り' },
+    { name: '聖徳太子' },
+    { name: '葵祭' },
+    { name: '賀茂川' },
+    { name: '重要文化財' },
+    { name: '音楽' },
+    { name: '鴨川' }
+  ]
+)
