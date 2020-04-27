@@ -25,6 +25,7 @@ class LandmarksController < ApplicationController
   # POST /landmarks.json
   def create
     @landmark = Landmark.new(landmark_params)
+    @landmark.add_tags(tag_params[:tag_names])
 
     respond_to do |format|
       if @landmark.save
@@ -40,6 +41,9 @@ class LandmarksController < ApplicationController
   # PATCH/PUT /landmarks/1
   # PATCH/PUT /landmarks/1.json
   def update
+    @landmark.taggings.destroy_all
+    @landmark.add_tags(tag_params[:tag_names])
+
     respond_to do |format|
       if @landmark.update(landmark_params)
         format.html { redirect_to @landmark, notice: 'Landmark was successfully updated.' }
@@ -70,5 +74,9 @@ class LandmarksController < ApplicationController
     # Only allow a list of trusted parameters through.
     def landmark_params
       params.require(:landmark).permit(:name, :hiragana, :latitude, :longitude, :url, :question, :answer1, :answer2, :answer3, :correct, :author)
+    end
+
+    def tag_params
+      params.require(:landmark).permit(:tag_names)
     end
 end
