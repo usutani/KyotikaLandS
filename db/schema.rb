@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_04_26_003146) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "landmarks", force: :cascade do |t|
     t.string "name", null: false
     t.string "hiragana", null: false
@@ -29,8 +32,8 @@ ActiveRecord::Schema.define(version: 2020_04_26_003146) do
   end
 
   create_table "taggings", force: :cascade do |t|
-    t.integer "landmark_id", null: false
-    t.integer "tag_id", null: false
+    t.bigint "landmark_id", null: false
+    t.bigint "tag_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["landmark_id"], name: "index_taggings_on_landmark_id"
