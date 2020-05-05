@@ -10,9 +10,7 @@ def import_tsv(class_name)
   file = File.join(SEED_TSV_DIR, "#{table_name}.tab")
   CSV.foreach(file, col_sep: "\t", headers: true) do |row|
     cols ||= row.headers
-    hash = cols.each_with_object({}) do |col, result|
-      result[col] = row[col]
-    end
+    hash = cols.index_with { |col| row[col] }
     puts hash
     class_name.constantize.create!(hash)
   end
