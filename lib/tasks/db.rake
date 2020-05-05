@@ -2,7 +2,7 @@
 
 require 'csv'
 
-SEED_TSV_DIR = Rails.root.join('db', 'seed_tsv')
+SEED_TSV_DIR = Rails.root.join('db/seed_tsv')
 
 def import_tsv(class_name)
   cols = nil
