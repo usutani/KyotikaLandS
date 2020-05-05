@@ -1,0 +1,7 @@
+require: rubocop-rails
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+Style/IndentationConsistency:
+  EnforcedStyle: indented_internal_methods
